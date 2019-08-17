@@ -1,0 +1,6 @@
+1- installer wampserver 
+2- uploader projet.sql dans phpmyadmin
+3- supprimer les users de la table users 
+4- créer de nouveau utilisateurs et enregistrer leurs pass , les utilisateurs permis sont : /* ladjouzi ; kebaily ; otmani ; ghezzal ; walker ; hadjoudj */ 
+5- connecter vous avec les pass et voter 
+6- lorsque tous les votes sont fait , vous pourrez alors verifier le resultat du vote 

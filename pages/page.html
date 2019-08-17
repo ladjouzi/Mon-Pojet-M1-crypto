@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vote SSI -usthb-</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../style/style.css">
+</head>
+<body">
+	<!-- BOX ENREGISTREMENT -->
+	<div class="box">
+		<h2>Enregistrement</h2>
+		<form action="server.php" method="post" autocomplete="off" id="demIns">
+			<div class="inputBox">
+				<input type="text" name="nom" id="nom" required>
+				<label>Nom</label>
+				<div id="tooltip3">
+					<span>vous n'ete pas dans notre group !</span>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;" xml:space="preserve"><g><g>
+					<g id="play-arrow">
+						<polygon points="38.25,0 38.25,357 318.75,178.5   " data-original="#000000" class="active-path" data-old_color="#F62020" fill="#F90B0B"/>
+					</g>
+					</g></g> </svg>
+				</div>
+			</div>
+			<div class="inputBox">
+				<input type="text" name="prenom" id="prenom" required>
+				<label>Prénom</label>
+			</div>
+			<div class="inputBox">
+				<input type="text" name="matricule" id="matricule" required>
+				<label>Matricule</label>
+				<div id="tooltip1">
+					<span>Matricule erroné !</span>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;" xml:space="preserve"><g><g>
+					<g id="play-arrow">
+						<polygon points="38.25,0 38.25,357 318.75,178.5   " data-original="#000000" class="active-path" data-old_color="#F62020" fill="#F90B0B"/>
+					</g>
+					</g></g> </svg>
+				</div>
+			</div>
+			<div class="inputBox">
+				<input type="text" name="groupe" id="groupe" required>
+				<label>Groupe</label>
+				<div id="tooltip2">
+					<span>Erreur dans le groupe !</span>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;" xml:space="preserve"><g><g>
+					<g id="play-arrow">
+						<polygon points="38.25,0 38.25,357 318.75,178.5   " data-original="#000000" class="active-path" data-old_color="#F62020" fill="#F90B0B"/>
+					</g>
+					</g></g> </svg>
+				</div>
+			</div>
+			<input type="submit" value="Confirmer" name="submit">
+		</form>
+		<h3 id="already">vous avez deja un id ? <a href="" id="backtobox2">cliquez ici</a></h3>
+	</div>	
+
+<div class="box2">
+		<h2>Entrer votre Numéro d'identité pour voter</h2>
+		<form action="server.php" method="post" autocomplete="off" id="demCnx">
+			<div class="inputBox">
+				<input type="text" name="idvalue" id="idvalue" required>
+				<label>ID entrer votre id ici</label>
+			</div>
+			<input type="submit" value="Confirmer" name="submit2">
+		</form>
+		<ul>
+			<li id="liControle">Vous n'avez pas encore d'id ? <a href="" id="inscritmoi">cliquez ici</a></li>
+			<li>membre de groupe qui se sont pas encore enregistrés : <span id="pasencore"></span></li>
+		</ul>
+			
+	</div>
+
+<div id="box3">
+	<span class="dpsan">P</span>
+	<span class="dpsan">A</span>
+	<span class="dpsan">T</span>
+	<span class="dpsan">I</span>
+	<span class="dpsan">E</span>
+	<span class="dpsan">N</span>
+	<span class="dpsan">T</span>
+	<span class="dpsan">E</span>
+	<span class="dpsan">R</span>
+</div>
+
+
+<div id="inside">
+	<!--div id="rsa">
+		<h3>Generation des données rsa pour le transfert securisé de votre id vers le serveur : </h3>
+		<ul>
+			<li>Votre clé privé: <span  id="clePrive"></span></li>
+			<li>Votre clé public : <span id="clePublic"></span></li>
+			<li>votre id en claire : <span id="idClair"></span></li>
+			<li>Votre id encyrpté avec la cle public de serveur avec le module RSA : <span  id="idCrypte"></span></li>
+			<button type="button" id="hidersa">Confirmer</button>
+		</ul>
+
+	</div-->
+	<ul>
+		<li>Nom : <span  id="sonNom"></span></li>
+		<li>Prenom : <span id="sonPrenom"></span></li>
+		<li>Matricule : <span  id="sonMatricule"></span></li>
+		<li>Groupe : <span class="biometrique" id="sonGroupe"></span></li>
+		<li>ID : <span  id="sonID"></span></li>
+		<li>a deja voté : <span  id="sonVote"></span></li>
+	</ul>	
+	<img src="" id="imageFreind" title="image" alt="img perssone"></img>
+	<div id="voteBox">
+		<h3>Voulez vous les examins en juillet ?</h3>
+		<label class="container">OUI
+		 <input type="radio" checked="checked" name="radio" value="1" id="oui">
+		  <span class="checkmark"></span>
+		</label>
+		<label class="container">NON
+		  <input type="radio" name="radio" value="0" id="non">
+		  <span class="checkmark"></span>
+		</label>
+		<button class="voteSectionButtons" id="voterconfirmation">VOTER</button>	
+	</div>
+	<button class="voteSectionButtons" id="showVoteResult">VOIR RESULTAT DU VOTE</button>
+</div>
+<div id="voteResultDiv">
+	<h3>Resultat du vote de notre group</h3>
+	<ul>
+		<li>Données disponible pour - just pour toi - :
+			<ul>
+				<li>S1 :<span class="les_s"></span></li>
+				<li>S2 :<span class="les_s"></span></li>
+				<li>S3 :<span class="les_s"></span></li>
+				<li>S4 :<span class="les_s"></span></li>
+				<li>S5 :<span class="les_s"></span></li>
+				<li>S6 :<span class="les_s"></span></li>
+			</ul>
+		</li>
+		<li>Somme a(i) :
+			<ul>
+				<li>a1 :<span  class="les_a"></span></li>
+				<li>a2 :<span  class="les_a"></span></li>
+				<li>a3 :<span  class="les_a"></span></li>
+				<li>a4 :<span  class="les_a"></span></li>
+				<li>a5 :<span  class="les_a"></span></li>
+				<li>a6 :<span  class="les_a"></span></li>
+			</ul>
+		</li>
+		<li>Calcul des ß : 
+			<ul>
+				<li>ß1 :<span  class="les_b"></span></li>
+				<li>ß2 :<span  class="les_b"></span></li>
+				<li>ß3 :<span  class="les_b"></span></li>
+				<li>ß4 :<span  class="les_b"></span></li>
+				<li>ß5 :<span  class="les_b"></span></li>
+				<li>ß6 :<span  class="les_b"></span></li>
+			</ul>
+		</li>
+		<li>Calcul du resultat du vote Y = ­somedes(a(i) * b(i)) :<span id="y"></span></li>
+		<li>Notre polynome de partage de secret en supposont il y'a 9 groupe :<span id="poly"></span></li>
+	</ul>
+	
+<div id="chart"></div>
+<div id="polyChart"></div>
+</div>
+	<div id="showme"></div>
+
+	<footer>MASTER 1 - PROJET VOTE ELECTRONIQUE - SSI - 2018/2019</footer>
+
+</body>
+
+<script src="../package/jsencrypt-master/bin/jsencrypt.min.js"></script>
+
+	<script type="text/javascript">
+
+		(function () {	
+
+			//desactivation des tooltips d'erreur de saisie pour ne pas les afficher sauf en cas d'erreur
+			desactivateTooltip1(); desactivateTooltip2(); desactivateTooltip3();
+
+			var AllowedNames = ['ladjouzi', 'kebaily', 'ghezzal', 'walker', 'otmani', 'hadjoudj'];
+			var matricule=document.getElementById('matricule');
+			var groupe=document.getElementById('groupe');
+			var box=document.querySelector('.box');
+			var box2=document.querySelector('.box2');
+			var pasencore=document.getElementById('pasencore');
+			var inscritmoi=document.getElementById('inscritmoi');
+			var backtobox2=document.getElementById('backtobox2');
+			var liControle=document.getElementById('liControle');
+			var demIns=document.getElementById('demIns'); 
+			var demCnx=document.getElementById('demCnx');
+			var nom=document.getElementById('nom'); 
+			var prenom=document.getElementById('prenom');
+			var box3=document.getElementById('box3');
+			var valid_1=false,valid_2=false;
+			var idvalue=document.getElementById('idvalue');
+			var inside=document.getElementById('inside');
+			/*var rsa=document.getElementById('rsa');*/
+			/*var hidersa=document.getElementById('hidersa');*/
+			var voterconfirmation=document.getElementById('voterconfirmation');
+			var voteBox=document.getElementById('votBox');
+			var showVoteResult=document.getElementById('showVoteResult');
+			var voteResultDiv=document.getElementById('voteResultDiv');
+
+
+			var showme=document.getElementById('showme');
+
+			//traitement erreur saisie sur matricule class box1
+			matricule.addEventListener('keyup',valid_1=function(e)
+			{		
+				if(e.target.value)
+				{
+					if(!checkMatricule(e.target.value)) 
+					{
+						reactivateTooltip1();
+						e.target.style.borderBottom='3px solid red';
+						return false;
+					}
+					else 
+					{
+						desactivateTooltip1();	
+						e.target.style.borderBottom='3px solid #31FF00';						
+						return true;		
+					}
+				}
+				else
+				{
+					desactivateTooltip1();
+					e.target.style.borderBottom='';
+						return false;
+				}		
+				
+			}
+			);
+
+			
+			//traitement erreur saisie sur groupe class box1
+			groupe.addEventListener('keyup',valid_2=function(e)
+			{
+				if(e.target.value)
+				{
+					if(e.target.value != "1" && e.target.value != "2") 
+					{
+						reactivateTooltip2();
+						e.target.style.borderBottom='3px solid red';
+						return false;
+					}
+					else 
+					{
+						desactivateTooltip2();	
+						e.target.style.borderBottom='3px solid #31FF00';
+						return true; 		
+					}
+				}
+				else
+				{
+						desactivateTooltip2();
+						e.target.style.borderBottom='';
+						return false;
+				}
+			});
+
+			//traitement erreur saisie sur Nom class box1
+			nom.addEventListener('keyup',function(e)
+			{
+				if(e.target.value)
+				{
+					if(!AllowedNames.includes(e.target.value)) 
+					{
+						reactivateTooltip3();
+						e.target.style.borderBottom='3px solid red';
+
+					}
+					else 
+					{
+						desactivateTooltip3();	
+						e.target.style.borderBottom='3px solid #31FF00';
+			
+					}
+				}
+				else
+				{
+						desactivateTooltip3();
+						e.target.style.borderBottom='';
+
+				}
+			});
+			
+
+			//nbrDePlaceDispo ecrit nbr de place dispo pour le vote le max=6
+			//si == 0 afficher erreur en rouge 
+			nbrDePlaceDispo(pasencore);
+
+
+			//pour naviguer entre les bloc
+			inscritmoi.addEventListener('click',function(e)
+			{
+				e.preventDefault();
+				box.style.display='block';
+				box2.style.display='none';
+			});
+
+			pasencore.addEventListener('click',function(e)
+			{
+				e.preventDefault();
+				box.style.display='';
+				box2.style.display='';
+			});
+
+			//traitement de la demande d'inscription
+			demandeInscription(valid_1,valid_2);
+
+			//login 
+			loginToVote();
+
+
+			//testRsa
+			/*testRsa();*/
+			
+		})();
+
+/********************* partie fonction *******************************************/
+
+
+		function nbrDePlaceDispo(pasencore)
+		{
+
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET','server.php?pasencore='+true);
+
+			xhr.addEventListener('readystatechange', function() {
+    		
+    			if (xhr.readyState === 4 && xhr.status === 200 ) {
+    				returnValue=6-parseInt(xhr.responseText);
+    				pasencore.innerHTML= returnValue;   
+    				if(returnValue==0)
+    				{
+    					liControle.innerHTML='Le nombre de votant maximale est atteint';
+						liControle.style.color = 'red';	
+    				}
+    							
+    			} 
+			});
+
+			xhr.send(null);
+		}
+		function desactivateTooltip1() {
+			var tooltip1=document.querySelector('#tooltip1');
+			 tooltip1.style.display = 'none';								
+		}
+
+
+		function reactivateTooltip1() {
+			var tooltip1=document.querySelector('#tooltip1');
+			 tooltip1.style.display ='';								
+		}
+
+
+
+		function desactivateTooltip2() {
+			var tooltip2=document.querySelector('#tooltip2');
+			 tooltip2.style.display = 'none';								
+		}
+
+		
+		function reactivateTooltip2() {
+			var tooltip2=document.querySelector('#tooltip2');
+			 tooltip2.style.display ='';								
+		}
+
+
+		function desactivateTooltip3() {
+			var tooltip3=document.querySelector('#tooltip3');
+			 tooltip3.style.display = 'none';
+
+		}
+
+
+		function reactivateTooltip3() {
+			var tooltip3=document.querySelector('#tooltip3');
+			 tooltip3.style.display ='';								
+		}
+
+
+
+
+
+		function checkMatricule(matricule) {
+
+			return /^[0-9]{12}$/.test(matricule);
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************************** test for rsa module **********************************/
+
+
+		function testRsa () {
+										
+				var encrypt = new JSEncrypt();
+				var pem="-----BEGIN PUBLIC KEY-----\
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/hWqj4QlMA7wcE2TaefxfUZUJ\
+iwwvFRzvaVZ4xrQ6ggU1Kdgl+fzbx+A+EB0gS0zISGdhc4n6JxYgjRhS8ZBhSZXm\
+bgj/AtyPmemm9E67g3SweQjWXeyy5NCSWPPylGtOmGvpJ9UtaRG0k28nZctJho3n\
+q0JNhbBnGCqLdAcq6wIDAQAB\
+-----END PUBLIC KEY-----";
+
+
+ var private = "-----BEGIN RSA PRIVATE KEY-----\
+MIICXgIBAAKBgQC/hWqj4QlMA7wcE2TaefxfUZUJiwwvFRzvaVZ4xrQ6ggU1Kdgl\
++fzbx+A+EB0gS0zISGdhc4n6JxYgjRhS8ZBhSZXmbgj/AtyPmemm9E67g3SweQjW\
+Xeyy5NCSWPPylGtOmGvpJ9UtaRG0k28nZctJho3nq0JNhbBnGCqLdAcq6wIDAQAB\
+AoGBAK5Mway7lTZ0/7GdhN/AvQoSuUyiG0iOMnNArs3kKQpGYm7r0iddx95Nnate\
+BuPpI8vy+QMbn6rl/6FIR6bU6cvNh2uhdc/gtD9W/H5QaJyIvmheRVqDiFoRx0rz\
+QAT0aQUUVSbJVKSs4ILPsgBM3f3JC3iYJRtrPAov8liEX0ShAkEA4jRvqVHh77Mx\
+OurPMqHHExFnej6v0uOLPCBOnmHKJqsqe1grRrwDRXr6BTXxKy8POjUklvNC6meE\
+GL9aj6kElQJBANi/dOkSccYKPe0DqV0BAgfaaa5mMSZC5yovV8mzaZk/RIWfuHXm\
+gkIx98t6MdsXhU/Kzjkt8T9H5umGy8ZgEX8CQQDQb6r4pagAfOj/NkEIkcPj0SS9\
+oyfWtq+lDswC628f5Jc3ow31lueYzXG2/Xal6S4p37BAnBVr80jomOK0//RlAkB/\
+BZy3JncEr2XhK78qYPfWsFo0uXDeUmD0qPASpZEiHSDECnlopuD5eB0W4xKqqhsX\
+SuwWOGVkR3f8rWFobU5zAkEAxGec3RlX7hUu1uwiRth4nMhrv00ql7N8BoQ8Aviu\
+YB0v2lSnnnmCkUYO98pEYtMn0DU/4eIVrL1iAqitgA6T2g==\
+-----END RSA PRIVATE KEY-----";
+
+
+
+
+
+				encrypt.setPublicKey(pem);
+
+				var encrypted = encrypt.encrypt("ldj");
+
+				var decrypt = new JSEncrypt();
+				decrypt.setPrivateKey(private);
+				var uncrypted = decrypt.decrypt(encrypted);
+
+				/*console.log(encrypted);
+				console.log(uncrypted);*/
+
+
+											var xhr =  new XMLHttpRequest();
+					  		 				xhr.open('GET','server.php?testRsa='+encode64(stringToArrayBuffer(encrypted)));
+					  						xhr.addEventListener('readystatechange',function () {
+					  								//ciphertext=base64ToArrayBuffer(xhr.responseText);
+									         		/*uncrypted = decrypt.decrypt(xhr.responseText);*/
+									         		console.log(xhr.responseText);
+					  						});
+					  						xhr.send(null);
+
+		}
+
+
+
+
+		function demandeInscription(valid_1,valid_2)
+		{
+			demIns.addEventListener('submit',function (e) {
+
+				 e.preventDefault();
+			
+				 var AllowedNames = ['ladjouzi', 'kebaily', 'ghezzal', 'walker', 'otmani', 'hadjoudj'];
+				 if(valid_1 && valid_2 && AllowedNames.includes(nom.value.toLowerCase()))
+				 {
+				 	var box3Save=box3.innerHTML;
+				 	box3.style.display='block';
+
+
+				 	setTimeout(function(){ 
+
+
+				 	//il faut generer ici mes clés public et privé 
+
+				 	
+
+
+
+				 	//demande d'insciption avec cle public		
+					 	var xhr = new XMLHttpRequest();
+						xhr.open('GET','server.php?verify_submit='+encodeURIComponent(true)+'&nom='+encodeURIComponent(nom.value.toLowerCase())+'&prenom='+encodeURIComponent(prenom.value.toLowerCase())+'&matricule='+encodeURIComponent(parseInt(matricule.value))+'&groupe='+encodeURIComponent(parseInt(groupe.value)));
+
+
+							xhr.addEventListener('readystatechange', function() 
+							{
+		    		
+		    				if (xhr.readyState === 4 && xhr.status === 200 ) 
+		    				{
+
+		    					var result=xhr.responseText.split('|');
+		    					if(xhr.responseText!="0" && result[0]=="1")
+		    					{
+		    						
+		    						box3.innerHTML="<h3>Bonjour <span class=\"mspan\">"+ result[1]+"</span>  Noter bien Votre Numero id </h3><ul><li><span class=\"mspan\">ID :</span><br>"+result[2]+"</ul><button type=\"button\" id=\"hideBox3\">Confirmer</button>";
+		    						var hideBox3=document.getElementById('hideBox3');
+		    						hideBox3.addEventListener('click',function()
+		    						{
+		    							box3.style.display='';
+		    							box3.innerHTML=box3Save;
+		    							backtobox2.click();
+
+		    						});
+
+		    					} else 
+		    					{
+		    						box3.innerHTML="<h2 style=\"color:red;\">Erreur - soit vous etes deja inscrit (dans ce cas contacter le chef de groupe pour recupérer votre id ) - ou - le nombre de votant maximale est atteint !</h2><button type=\"button\" id=\"hideBox3\">Confirmer</button>";
+		    						var hideBox3=document.getElementById('hideBox3');
+		    						hideBox3.addEventListener('click',function()
+		    						{
+		    							box3.style.display='';
+		    							box3.innerHTML=box3Save;
+		    							backtobox2.click();
+
+		    						});
+		    					}
+
+
+	    					} 
+
+							});
+
+							xhr.send(null);
+
+				 	 }, 4000);
+
+
+
+							 	
+				 				 	
+				 }
+
+			});
+		}
+
+
+		function loginToVote()
+		{
+
+				demCnx.addEventListener('submit',function (e) 
+				{
+
+
+				 		e.preventDefault();
+
+
+				 		/* les essai avec window.crypt*/
+									
+				 					/*var clePrive = document.getElementById('clePrive');
+				 					var clePublic = document.getElementById('clePublic');
+				 					var idClair = document.getElementById('idClair');
+				 					var idCrypte = document.getElementById('idCrypte');		*/		 					
+
+		    						//inside.style.display="block";
+		    						/*rsa.style.display="block";*/
+
+
+		    					/* CREATION DES CLE ET CRYPTAGE ID */	
+
+		    						/*idClair.innerHTML=idvalue.value;
+		    					
+									window.crypto.subtle.generateKey(
+								    {
+								        name: "RSA-OAEP",
+								        modulusLength: 2048, //can be 1024, 2048, or 4096
+								        publicExponent: new Uint8Array([0x01, 0x00, 0x01]),
+								        hash: {name: "SHA-256"}, //can be "SHA-1", "SHA-256", "SHA-384", or "SHA-512"
+								    },
+								    true, //whether the key is extractable (i.e. can be used in exportKey)
+								    ["encrypt", "decrypt"] //can be any combination of "sign" and "verify"
+									).then(function(keyPair){
+
+										window.crypto.subtle.exportKey(
+								        "pkcs8",
+								        keyPair.privateKey,
+								    	).then(function(exportedPrivateKey) {
+								        // converting exported private key to PEM format
+								        var pem = toPem(exportedPrivateKey);
+								        clePrive.innerHTML=pem;
+								    	});
+
+
+								    	window.crypto.subtle.exportKey(
+								        "spki",
+								        keyPair.publicKey
+								    	).then(function(exportedPublicKey) {
+								        // converting exported private key to PEM format
+								        var pem2 = toPem2(exportedPublicKey);
+								        clePublic.innerHTML=pem2;
+								    	});
+
+
+								    	window.crypto.subtle.encrypt(
+									    {
+									        name: "RSA-OAEP",
+									        //label: Uint8Array([...]) //optional
+									    },
+									    keyPair.publicKey, //from generateKey or importKey above
+									    stringToArrayBuffer(idvalue.value) //ArrayBuffer of data you want to encrypt
+										).then(function(encrypted){
+										    //returns an ArrayBuffer containing the encrypted data
+										    idCrypte.innerHTML=encode64(encrypted);
+										});
+	  
+									}).catch(function(err){
+								    console.error(err);
+									});*/
+	
+				
+
+
+
+
+				/* quand je click sur le button confirmer dans les info cle rsa envoyer la req au serveur*/				
+					/*hidersa.addEventListener('click',function()
+		    		{
+		    			rsa.style.display='';
+		    			idClair.innerHTML='';
+						clePrive.innerHTML='';
+						clePublic.innerHTML='';
+						idCrypte.innerHTML='';*/
+
+		    			var xhr = new XMLHttpRequest();
+						xhr.open('GET','server.php?verify_existing_id='+encodeURIComponent(true)+'&idvalue='+encodeURIComponent(idvalue.value));
+
+							//connexion avec le serveur
+
+							xhr.addEventListener('readystatechange', function() 
+							{
+		    		
+		    				if (xhr.readyState == 4 && xhr.status == 200) 
+		    				{
+		    					var result=xhr.responseText.split('|');
+
+		    					if((xhr.responseText!="0") && (result[0]=="1"))		
+		    					{
+
+		    						inside.style.display="block";
+		    						var sonNom=document.getElementById('sonNom');
+		    						var sonPrenom=document.getElementById('sonPrenom');
+		    						var sonMatricule=document.getElementById('sonMatricule');
+		    						var sonGroupe=document.getElementById('sonGroupe');
+		    						var sonVote=document.getElementById('sonVote');
+		    						var sonID=document.getElementById('sonID');
+		    						var imageFreind=document.getElementById('imageFreind');
+		    						var sessionID=result[6];
+
+		    						sonNom.innerHTML=result[1];
+		    						sonPrenom.innerHTML=result[2];
+		    						sonMatricule.innerHTML=result[3];
+		    						sonGroupe.innerHTML=result[4];
+		    						sonID.innerHTML=idvalue.value;
+
+		    						//si il n'a pas voté afficher les boutton de vote	    			
+		    						if(result[5]=="0") 
+		    						{
+		    							sonVote.innerHTML="vous n'avez pas voté";
+		    							voteBox.style.display="block";
+
+		    							voterconfirmation.addEventListener('click',function () {
+		    								
+
+		    				/********************* traitement vote **********************************/				
+
+
+		    								//recuperation du vote depuis l'aaplication
+
+		    								var radio=document.getElementsByName('radio');
+		    								var radioValue;
+		    								for (var i = 0, length = radio.length; i < length; i++)
+											{
+												 if (radio[i].checked)
+												 {
+												   radioValue=radio[i].value;
+
+												  break;
+												 }
+											}
+
+											//choix des r (entre 0 et p-1) et calcul des fonction je travail modulo p=829
+											var r1=Math.floor(Math.random() * 829-1);
+											var r2=Math.floor(Math.random() * 829-1);
+											var r3=Math.floor(Math.random() * 829-1);
+											var r4=Math.floor(Math.random() * 829-1);
+											var r5=Math.floor(Math.random() * 829-1);
+
+											var r=[r1,r2,r3,r4,r5];
+
+											var p11=0;
+											var p12=0;
+											var p13=0;
+											var p14=0;
+											var p15=0;
+											var p16=0;
+											for(var i=1;i<5;i++)
+											{
+												p11=r[i-1]*Math.pow(1,i)+p11;
+												p12=r[i-1]*Math.pow(2,i)+p12;
+												p13=r[i-1]*Math.pow(3,i)+p13;
+												p14=r[i-1]*Math.pow(4,i)+p14;
+												p15=r[i-1]*Math.pow(5,i)+p15;
+												p16=r[i-1]*Math.pow(6,i)+p16;
+											}
+
+											//calcul des s
+											 p11=(parseInt(radioValue)+p11)%829;
+											 p12=(parseInt(radioValue)+p12)%829;	
+											 p13=(parseInt(radioValue)+p13)%829;
+											 p14=(parseInt(radioValue)+p14)%829;
+											 p15=(parseInt(radioValue)+p15)%829;
+											 p16=(parseInt(radioValue)+p16)%829;
+
+
+											//pour l'envoi au serveur sous forme d1 string 
+											var stringToSend=p11+"|"+p12+"|"+p13+"|"+p14+"|"+p15+"|"+p16;
+
+
+											var box3Save=box3.innerHTML;
+									 			box3.style.display='block';
+									 			box3.style.zIndex = '4';
+										setTimeout(function () {
+
+
+											var xhr2 = new XMLHttpRequest();
+											xhr2.open('GET','server.php?submit_vote='+encodeURIComponent(true)+'&voteValue='+encodeURIComponent(stringToSend)+'&nom='+encodeURIComponent(result[1])+'&sessionID='+sessionID);
+
+											xhr2.addEventListener('readystatechange',function ()
+											{
+												if(xhr2.readyState == 4 && xhr2.status == 200)
+												{
+													if(xhr2.responseText=="1")
+													{
+														voteBox.style.display='';
+														box3.innerHTML="<h1 style=\"color:#31FF00;\">Operation réussie vous pouvez consulter le resultat quand tous les membres auront voter</h1><button type=\"button\" id=\"hideBox3\">Confirmer</button>";
+								    					var hideBox3=document.getElementById('hideBox3');
+								    					hideBox3.addEventListener('click',function()
+								    					{
+									    					box3.style.display='';
+									    					box3.innerHTML=box3Save;
+									    					box3.style.zIndex = '';
+									    					sonVote.innerHTML="vous avez deja voté";
+		    												sonVote.style.color="red";
+									    					//si tous on voté ajouter un boutton pour voir le resultat
+									    					var xhr3=new XMLHttpRequest();
+									    					xhr3.open('GET','server.php?number_of_votes='+encodeURIComponent(true)+'&sessionID='+sessionID);
+									    					xhr3.addEventListener('readystatechange',function () 
+									    					{
+									    						if(xhr3.readyState== 4 && xhr3.status == 200)
+									    						{
+									    							if(xhr3.responseText == "1")
+									    							{
+									    								showVoteResult.style.display="block";
+									    								showVoteResult.addEventListener('click',function()
+									    								{
+									    									//DIV RESULTAT DU VOTE
+
+									    									voteResultDiv.style.display="block";
+
+												    		var les_s=document.getElementsByClassName('les_s');
+												    		var les_a=document.getElementsByClassName('les_a');
+												    		var les_b=document.getElementsByClassName('les_b');
+												    		var y=document.getElementById('y');
+												    		les_s_l=les_s.length;
+												    												
+
+												    		//recuperer les s
+												    		var xhr4=new XMLHttpRequest();
+												    	 	xhr4.open('GET','server.php?give_me_s='+encodeURIComponent(true)+'&sessionID='+sessionID);			
+												    		xhr4.addEventListener('readystatechange',function () {
+												    		if(xhr4.readyState== 4 && xhr4.status == 200)
+												    		{
+												    			//s1,s2,s3,s4;s5,s6,a1,a2...a6
+												    			var sValues=xhr4.responseText.split('|');
+
+												    			//decouper lee tabeleau en 2 
+
+												    			//svalues va etre decouper et garde seulement les 6 premier valeur et envoi //le rest a ai
+												    			var ai=sValues.splice(6);
+												    			
+
+												    			
+
+												    			//calcul des b
+												    			var b;  var bi =new Array();
+												    			for(var i=1;i<=6;i++)
+												    			{
+												    				b=1;
+												    				for(var j=1;j<=6;j++)
+												    				{
+												    					if(j!=i)
+												    					{
+												    						b=(j/(j-i))*b;
+												    					}
+												    				}
+
+												    				//enregistrer b(i) dans un tableau attention au indice ex:bi[0]=b1
+												    				bi.push(b);
+												    			}
+
+												    				//calcul de y 
+												    				var rsultatFinalDeVote = 0;
+												    				for(var k=0;k<6;k++)
+												    				{
+												    					rsultatFinalDeVote=(bi[k] * ai[k])+rsultatFinalDeVote
+												    				}
+												    				 	if ((rsultatFinalDeVote%=829)<0) {rsultatFinalDeVote=829+rsultatFinalDeVote%829;}
+												    				 	else rsultatFinalDeVote%=829;
+												    					
+												    				 	for(var i=0 ;i<les_s_l; i++)
+												    				 	{
+												    				 		les_s[i].innerHTML="=================>  "+sValues[i];
+												    				 		les_a[i].innerHTML="=================>  "+ai[i];
+												    				 		les_b[i].innerHTML="=================>  "+bi[i];
+												    				 		y.innerHTML="=================>  "+rsultatFinalDeVote;
+												    				 	}
+
+
+												    				 //polynome 
+
+												    				 var poly=document.getElementById('poly');
+												    				 poly.innerHTML=" F(x) = "+rsultatFinalDeVote+" + 2 * <var>x<sup>8</sup></var> + 5 * <var>x<sup>7</sup></var> + 4 * <var>x<sup>6</sup></var> + 2 * <var>x<sup>5</sup></var> + 3 * <var>x<sup>4</sup></var> + 7 * <var>x<sup>3</sup></var> + 8 <var>x<sup>2</sup></var> + 2 * <var>x<sup>1</sup></var> "
+
+												    				 // chart draw
+												    				 var data=new Array();
+												    				 data.push(rsultatFinalDeVote);data.push(6-data[0]);
+												    				 
+												    				 drawVoteChart (data);
+																	darwPolyChart (calculDataPoly ());													    				
+												    		}
+												    								
+												    		});
+												    		xhr4.send(null);
+
+									    								});
+									    							}
+									    						}
+									    					});
+									    							xhr3.send(null);
+
+								    							});
+
+														 	}else console.log(xhr2.responseText);
+							    							
+														 }
+														
+													});
+
+													xhr2.send(null);
+
+											
+											},4000);
+		    								
+
+
+		    							});
+		    						}//si il a deja voter alors rien ou afficher resultat de vote si dispo
+		    						else if( result[5]=="1")
+		    						{
+		    								sonVote.innerHTML="vous avez deja voté";
+		    								sonVote.style.color="red";
+
+		    								var xhr3=new XMLHttpRequest();
+									    	xhr3.open('GET','server.php?number_of_votes='+encodeURIComponent(true)+'&sessionID='+sessionID);
+
+									    	xhr3.addEventListener('readystatechange',function () 
+									    	{
+									    		if(xhr3.readyState== 4 && xhr3.status == 200)
+									    		{
+									    			if(xhr3.responseText == "1")
+									    			{	
+									    				showVoteResult.style.display="block";
+									    				showVoteResult.addEventListener('click',function()
+									    				{
+									    					//DIV RESULTAT DU VOTE 
+
+									    					voteResultDiv.style.display="block";
+
+												    		var les_s=document.getElementsByClassName('les_s');
+												    		var les_a=document.getElementsByClassName('les_a');
+												    		var les_b=document.getElementsByClassName('les_b');
+												    		var y=document.getElementById('y');
+												    		les_s_l=les_s.length;
+												    												
+
+												    		//recuperer les s
+												    		var xhr4=new XMLHttpRequest();
+												    	 	xhr4.open('GET','server.php?give_me_s='+encodeURIComponent(true)+'&sessionID='+sessionID);			
+												    		xhr4.addEventListener('readystatechange',function () {
+												    		if(xhr4.readyState== 4 && xhr4.status == 200)
+												    		{
+												    			//s1,s2,s3,s4;s5,s6,a1,a2...a6
+												    			var sValues=xhr4.responseText.split('|');
+
+												    			//decouper lee tabeleau en 2 
+
+												    			//svalues va etre decouper et garde seulement les 6 premier valeur et envoi //le rest a ai
+												    			var ai=sValues.splice(6);
+												    			
+
+												    			
+
+												    			//calcul des b
+												    			var b;  var bi =new Array();
+												    			for(var i=1;i<=6;i++)
+												    			{
+												    				b=1;
+												    				for(var j=1;j<=6;j++)
+												    				{
+												    					if(j!=i)
+												    					{
+												    						b=(j/(j-i))*b;
+												    					}
+												    				}
+
+												    				//enregistrer b(i) dans un tableau attention au indice ex:bi[0]=b1
+												    				bi.push(b);
+												    			}
+
+												    				//calcul de y 
+												    				var rsultatFinalDeVote = 0;
+												    				for(var k=0;k<6;k++)
+												    				{
+												    					rsultatFinalDeVote=(bi[k] * ai[k])+rsultatFinalDeVote
+												    				}
+												    				 	if ((rsultatFinalDeVote%=829)<0) {rsultatFinalDeVote=829+rsultatFinalDeVote%829;}
+												    				 	else rsultatFinalDeVote%=829;
+												    					
+												    				 	for(var i=0 ;i<les_s_l; i++)
+												    				 	{
+												    				 		les_s[i].innerHTML="=================>  "+sValues[i];
+												    				 		les_a[i].innerHTML="=================>  "+ai[i];
+												    				 		les_b[i].innerHTML="=================>  "+bi[i];
+												    				 		y.innerHTML="=================>  "+rsultatFinalDeVote;
+												    				 	}
+
+
+												    				 //polynome 
+												    				 var poly=document.getElementById('poly');
+												    				 poly.innerHTML=" F(x) = "+rsultatFinalDeVote+" + 2 * <var>x<sup>8</sup></var> + 5 * <var>x<sup>7</sup></var> + 4 * <var>x<sup>6</sup></var> + 2 * <var>x<sup>5</sup></var> + 3 * <var>x<sup>4</sup></var> + 7 * <var>x<sup>3</sup></var> + 8 <var>x<sup>2</sup></var> + 2 * <var>x<sup>1</sup></var> "
+
+												    				 // chart draw
+												    				 var data=new Array();
+												    				 data.push(rsultatFinalDeVote);data.push(6-data[0]);
+												    				 drawVoteChart (data);
+												    				 darwPolyChart (calculDataPoly ());
+																													    				
+												    		}
+												    								
+												    		});
+												    		xhr4.send(null);
+
+									    				});
+									    			} else console.log('err');
+									    		} 
+									    	});
+									    	xhr3.send(null);
+
+		    						} 
+
+
+		    						switch (result[1]) {
+		    							case "ladjouzi": 
+		    									imageFreind.src="../images/mahfoud.jpg";
+		    								break;
+		    							case "kebaily":
+		    									imageFreind.src="../images/houssem.jpg"
+		    								break;
+		    							case "ghezzal":
+		    									imageFreind.src="../images/billel.jpg"
+		    								break;
+		    							case "walker":
+		    									imageFreind.src="../images/merouane.jpg"
+		    								break;
+		    							case "otmani":
+		    									imageFreind.src="../images/redouane.jpg"
+		    								break;
+		    							default:
+		    								
+		    								break;
+		    						}
+
+		    						
+
+		    					}
+		    					else 
+		    					{
+		    						console.log(xhr.responseText);
+
+		    						inside.style.display='';
+		    						var box3Save=box3.innerHTML;
+				 					box3.style.display='block';
+		    						box3.innerHTML="<h2 style=\"color:red;\">Erreur - reverifier votre id ou contacter ladjouzi -</h2><button type=\"button\" id=\"hideBox3\">Confirmer</button>";
+		    						var hideBox3=document.getElementById('hideBox3');
+		    						hideBox3.addEventListener('click',function()
+		    						{
+		    							box3.style.display='';
+		    							box3.innerHTML=box3Save;
+		    							backtobox2.click();
+
+		    						});
+
+
+		    					}
+
+	    					} 
+
+							});
+
+							xhr.send(null);
+
+		    	    });
+
+
+
+				//});
+
+		}
+
+
+
+function arrayBufferToBase64(arrayBuffer) {
+    var byteArray = new Uint8Array(arrayBuffer);
+    var byteString = '';
+    for(var i=0; i < byteArray.byteLength; i++) {
+        byteString += String.fromCharCode(byteArray[i]);
+    }
+    var b64 = window.btoa(byteString);
+
+    return b64;
+}
+
+function base64ToArrayBuffer(base64) {
+    var binary_string =  window.atob(base64);
+    var len = binary_string.length;
+    var bytes = new Uint8Array( len );
+    for (var i = 0; i < len; i++)        {
+        bytes[i] = binary_string.charCodeAt(i);
+    }
+    return bytes;
+}
+
+
+
+
+function addNewLines(str) {
+
+    var finalString = '';
+    while(str.length > 0) {
+        finalString += str.substring(0, 64) + '\n';
+        str = str.substring(64);
+    }
+
+    return finalString;
+}
+
+function toPem(privateKey) {
+    var b64 = addNewLines(arrayBufferToBase64(privateKey));
+    var pem = "-----BEGIN PRIVATE KEY-----\n" + b64 + "-----END PRIVATE KEY-----";
+    
+    return pem;
+}
+function toPem2(publicKey) {
+    var b64 = addNewLines(arrayBufferToBase64(publicKey));
+    var pem2 = "-----BEGIN PUBLIC KEY-----\n" + b64 + "-----END PUBLIC KEY-----";
+    
+    return pem2;
+}
+
+function stringToArrayBuffer(str){
+    var buf = new ArrayBuffer(str.length);
+    var bufView = new Uint8Array(buf);
+    for (var i=0, strLen=str.length; i<strLen; i++) {
+        bufView[i] = str.charCodeAt(i);
+    }
+    return buf;
+}
+function arrayBufferToString(str){
+    var byteArray = new Uint8Array(str);
+    var byteString = '';
+    for(var i=0; i < byteArray.byteLength; i++) {
+        byteString += String.fromCodePoint(byteArray[i]);
+    }
+    return byteString;
+}
+
+
+function encode64 (buff) {
+return btoa(new Uint8Array(buff).reduce((s, b) => s + String.fromCharCode(b), ''));
+}
+
+
+function drawVoteChart (data) {
+
+	var myChart = echarts.init(document.getElementById('chart'));
+
+        // specify chart configuration item and data
+    	option = {
+    		height:'270px',
+    		width :'420px',
+    		backgroundColor: '#2c343c',
+    		title: {
+        	text: 'REPRESENTATION DES TAUX DE VOTE',
+        	left: 'center',
+       		 top: 16,
+       		 textStyle: {
+            	color: 'orange'
+       		 }		
+    		},
+		    tooltip : {
+		        trigger: 'axis',
+		        axisPointer : {            
+		            type : 'shadow'        
+		        }
+		       
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    xAxis: {
+		        type: 'category',
+		        data: ['POUR JUILLET', 'CONTRE JUILLET'],
+		        axisTick: {
+                alignWithLabel: true
+            	},
+        		axisLine: {
+           			 lineStyle: {
+               		 color: 'orange'
+            		}
+        		}
+
+		    },
+		    yAxis: {
+		        type: 'value',
+
+		        axisLine: {
+		            lineStyle: {
+		                color: 'orange',
+		            }
+		        }
+		    },
+		    series: [{
+		        data: data,
+		        type: 'bar'
+		        
+		    }]
+		};
+
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+}
+
+function calculDataPoly () {
+	var x;
+	var data = new Array();
+	for(var x=1;x<=9;x++)
+	{
+		data.push([x, 2*x +  8*Math.pow(x,2) +  7*Math.pow(x,3) +  3*Math.pow(x,4) +  2*Math.pow(x,5) +  4*Math.pow(x,6) +  5*Math.pow(x,7) +  2*Math.pow(x,8) + 1]);
+
+	}
+
+	return data;
+
+}
+
+
+function darwPolyChart (data) {
+	var data = data;
+
+	var myRegression = ecStat.regression('polynomial',data, 8);
+
+	
+
+var option = {
+	backgroundColor: '#2c343c',
+	title: {
+        	text: 'POINT DE POLYNOME A PARTAGER',
+        	left: 'center',
+       		 top: 16,
+       		 textStyle: {
+            	color: 'orange'
+       		 }		
+    		},
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
+    },
+    xAxis: {
+        type: 'value',
+        splitLine: {
+            lineStyle: {
+                type: 'dashed'
+            }
+        },
+        splitNumber:1
+    },
+    yAxis: {
+        type: 'value',
+
+        splitLine: {
+            lineStyle: {
+                type: 'dashed'
+            }
+        }
+    },
+    grid: {
+        top: 90
+    },
+    series: [{
+        name: 'scatter',
+        type: 'scatter',
+        label: {
+            emphasis: {
+                show: true,
+                position: 'right',
+                textStyle: {
+                    color: 'orange',
+                    fontSize: 16
+                }
+            }
+        },
+        data: data
+    }, {
+        name: 'line',
+        type: 'line',
+        smooth: true,
+        showSymbol: false,
+        data: myRegression.points,
+        markPoint: {
+            itemStyle: {
+                normal: {
+                    color: 'transparent'
+                }
+            },
+            label: {
+                normal: {
+                    show: true,
+                    position: 'left',
+                    formatter: myRegression.expression,
+                    textStyle: {
+                        color: '#333',
+                        fontSize: 14
+                    }
+                }
+            },
+            data: [{
+                coord: myRegression.points[myRegression.points.length - 1]
+            }]
+        }
+    }]
+};
+
+
+	var myChart = echarts.init(document.getElementById('polyChart'));
+
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+}
+
+
+
+
+</script>
+<script src="../../crypto1/package echart/dist/echarts.min.js"></script>
+<script src="../../crypto1/package echart/dist/ecStat.min.js"></script>
+
+
+</html>

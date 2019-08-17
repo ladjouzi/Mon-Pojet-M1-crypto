@@ -1,0 +1,624 @@
+body
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	margin: 0;
+	padding: 0;
+	font-family:"montserrat",sans-serif;
+	letter-spacing: 1px;
+	background:url('../images/evote.jpg') no-repeat fixed center;
+	background-size: cover;
+
+}
+footer
+{
+	position: absolute;
+	top: 95%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	font-size: 1.6em;
+	font-weight: bold;
+	color: orange;
+	text-align: center;
+	text-shadow: 0px 4px 2px black;
+}
+
+.box
+{
+  display: none;
+	z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(65,66,65,1);
+  width: 500px;
+  height: 500px;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 50px 5px;
+  box-shadow: 0px 20px 25px 10px rgba(0,0,0,.9);
+  animation-name: boxanim;
+  animation-duration: 1.3s;
+}
+
+.box2
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(65,66,65,1);
+  width: 500px;
+  height: 440px;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 50px 5px;
+  box-shadow: 0px 20px 25px 10px rgba(0,0,0,.9);
+  animation-name: boxanim;
+  animation-duration: 1.3s;
+}
+
+@keyframes boxanim{
+  from {top:0%; opacity: 0.1;}
+  to {left:50%; opacity: 1;}
+}
+
+#box3
+{
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  word-wrap: break-word;
+  background-image: linear-gradient(to bottom,rgba(65,66,65,.9) 80% ,rgba(38,236,92.55,.4));
+  z-index: 3;
+}
+#hideBox3,#hidersa,.voteSectionButtons
+{
+    position: absolute;
+    top: 70%; left: 50%;
+    transform: translate(-50%,-50%);
+    background:orange;
+    width: 499px;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    color:black;
+    text-shadow: 0px 1px 2px #000;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0px 4px 6px 1px #000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: .5s all ease; 
+    z-index: 4;
+}
+
+#hideBox3:hover,#hidersa:hover,.voteSectionButtons:hover
+{
+  letter-spacing: 4px;
+  color: white;
+  background:#31FF00;
+  text-shadow: 0px 3px 4px black;
+}
+.mspan
+{
+  color: #24E400;
+  font-style: italic;
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+
+.dpsan
+{
+  position: relative;
+  top: 50%;
+  left: 29%;
+  transform: translate(-50%,-50%);
+  color: #24E400;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-shadow: 0px 8px 12px black;
+  animation: animate 3s linear infinite;
+}
+.dpsan:nth-child(1)
+{
+  animation-delay: 0s;
+}
+.dpsan:nth-child(2)
+{
+  animation-delay: 0.1s;
+}
+.dpsan:nth-child(3)
+{
+  animation-delay: 0.2s;
+}
+.dpsan:nth-child(4)
+{
+  animation-delay: 0.3s;
+}
+.dpsan:nth-child(5)
+{
+  animation-delay: 0.4s;
+}
+.dpsan:nth-child(6)
+{
+  animation-delay: 0.5s;
+}
+.dpsan:nth-child(7)
+{
+  animation-delay: 0.6s;
+}
+.dpsan:nth-child(8)
+{
+  animation-delay: 0.7s;
+}
+.dpsan:nth-child(9)
+{
+  animation-delay: 0.8s;
+}
+
+#box3 h3
+{
+  text-align: center;
+  color: orange;
+  font-size: 1.3em;
+  text-shadow: 0px 4px 5px black;
+}
+
+@keyframes animate
+{
+  0%
+  {
+    filter:blur(0);
+  }
+  40%
+  {
+    filter:blur(20px);
+  }
+  80%
+  {
+    filter:blur(0);
+  }
+  100%
+  {
+    filter:blur(0);
+  }
+}
+
+ h2
+ {
+ 	margin: 0 0 30px;
+ 	padding: 0;
+ 	color: orange;
+ 	text-shadow: 0px 3px 4px #000; 
+ 	text-align: center;
+ 	font-size: 1.6em;
+ }
+
+ ul
+ {
+   margin-top: 60px;
+ }
+ li
+{
+ 
+  padding: 5px;
+  color: orange;
+  text-shadow: 0px 3px 4px #000;
+}
+#already
+{
+  margin-top: 40px;
+  color: orange;
+  text-shadow: 0px 3px 4px #000;
+}
+
+a,ul li span
+{
+  color: #24E400;
+
+}
+a:hover
+{
+  color: darkblue;
+}
+
+
+ .inputBox
+ {
+ 	position: relative;
+ }
+
+ .inputBox input
+ {
+ 	color: #fff;
+ 	width: 100%;
+ 	padding: 10px 0;
+ 	font-size: 16px;
+ 	margin-bottom: 20px;
+ 	border: none;
+ 	outline: none;
+ 	border-bottom: 1px solid yellow;
+ 	background-color: transparent;
+ }
+ .inputBox label
+ {
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	color: yellow;
+ 	text-shadow: 0px 3px 4px #000; 
+	padding: 10px 0;
+ 	font-size: 16px;
+ 	pointer-events: none;
+ 	transition: .5s;
+ }
+  .inputBox input:focus ~ label,
+  .inputBox input:valid ~ label
+  {
+  	top:-25px;
+  	left: 0;
+  	color: #03a9f4;
+  	font-size: 20px;
+  }
+
+ .inputBox input:focus,
+ .inputBox input:valid
+{
+  border-bottom: 2px solid #31FF00;
+}
+
+/*.box input[type="submit"]
+{
+	  position: relative;
+  	display: block;
+  	background:orange;
+  	width: 125%;
+  	top:20px;
+  	left: -40px;
+  	border: none;
+  	outline: none;
+  	padding: 15px 20px;
+  	color:black;
+  	text-shadow: 0px 1px 2px #000;
+  	font-size: 1.1em;
+  	font-weight: bold;
+  	cursor: pointer;
+  	border-radius: 2px;
+  	box-shadow: 0px 4px 6px 1px #000;
+  	letter-spacing: 1px;
+  	text-transform: uppercase;
+  	text-align: center;
+  	transition: .5s all ease;
+}*/
+.box2 input[type="submit"],.box input[type="submit"]
+{
+    position: relative;
+    display: block;
+    background:orange;
+    width: 119%;
+    top:20px;
+    left: -40px;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    color:black;
+    text-shadow: 0px 1px 2px #000;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0px 4px 6px 1px #000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: .5s all ease;
+}
+.box input[type="submit"]
+{
+   border-bottom-right-radius: 15px;
+}
+ input[type="submit"]:hover
+{
+	letter-spacing: 4px;
+	color: white;
+	background:#31FF00;
+	text-shadow: 0px 3px 4px black;
+}
+
+#tooltip1
+{
+  display:inline-block;
+  position: absolute;
+  background-color: rgba(254,0,0,1);
+  padding: 20px 30px;
+  top: -10px;
+  left: -240px;
+  border-radius: 2px;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px black;
+  box-shadow: -5px 5px 6px black;
+  animation-name: test;
+  animation-duration: 1.5s;
+}
+@keyframes test{
+  from {left:-300px; opacity: 0.1;}
+  to {left:-240px; opacity: 1;}
+}
+#tooltip1 svg,#tooltip2 svg,#tooltip3 svg
+{
+  position: absolute;
+  top: 26%;
+  left: 95%;
+}
+
+#tooltip2
+{
+  display:inline-block;
+  position: absolute;
+  background-color: rgba(254,0,0,1);
+  padding: 20px 30px;
+  top: -10px;
+  left: -288px;
+  border-radius: 2px;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px black;
+  box-shadow: -5px 5px 6px black;
+  animation-name: test2;
+  animation-duration: 1.5s;
+}
+
+@keyframes test2{
+  from {left:-348px; opacity: 0.1;}
+  to {left:-288px; opacity: 1;}
+}
+
+
+#tooltip3
+{
+  display:inline-block;
+  position: absolute;
+  background-color: rgba(254,0,0,1);
+  padding: 20px 30px;
+  top: -10px;
+  left: -370px;
+  border-radius: 2px;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px black;
+  box-shadow: -5px 5px 6px black;
+  animation-name: testo;
+  animation-duration: 1.5s;
+}
+@keyframes testo{
+  from {left:-440px; opacity: 0.1;}
+  to {left:-370px; opacity: 1;}
+}
+
+
+#inside
+{
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(65,66,65,1);
+  width: 1000px;
+  height: 600px;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 50px 5px;
+  box-shadow: 0px 20px 25px 10px rgba(0,0,0,.9);
+  animation-name: boxanim;
+  animation-duration: 1.3s;
+  word-wrap: break-word;
+  z-index: 3;
+}
+#inside #imageFreind
+{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    top: 18%;
+    left: 77%;
+}
+
+#voteBox
+{
+  display: none;
+  position: absolute;
+  top: 46%;
+  left:0%;
+  height: 310px;
+  width: 99%; 
+}
+#voteBox h3,#rsa h3
+{
+  text-align: center;
+  color: orange;
+  font-size: 1.3em;
+  text-shadow: 0px 4px 5px black;
+}
+#rsa
+{
+  display: none;
+  font-size: 10px;
+  position: absolute;
+  background-color: black;
+  columns: orange;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+#hidersa
+{
+
+    top: 98%; 
+    
+}
+
+/* The container */
+.container {
+  display: inline-block;
+  position: relative;
+  left:280px;
+  top:30px;
+  padding-left: 50px;
+  margin-left: 100px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-size: 10px;
+  color: orange;
+  text-shadow: 0px 10px 12px black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container:hover
+{
+  color: #2196F3;
+  text-shadow: 0px 1px 2px #2196F3;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #31FF00;
+}
+
+.voteSectionButtons
+{
+  z-index: 3;
+  top: 93%;
+}
+
+h1
+{
+  text-align: center;
+}
+
+#showVoteResult
+{
+  display: none;
+}
+#voteResultDiv
+{
+   display: none;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   background: rgba(65,66,65,1);
+   width: 1330px;
+   height: 630px;
+   padding: 40px;
+   box-sizing: border-box;
+   border-radius: 50px 5px;
+   box-shadow: 0px 20px 25px 10px rgba(0,0,0,.9);
+   animation-name: boxanim;
+   animation-duration: 1.3s;
+   word-wrap: break-word;
+   z-index: 4;
+}
+#voteResultDiv h3
+{
+  color: orange;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 0px 4px 6px black; 
+  margin-top: -35px;
+}
+#voteResultDiv ul
+{
+  font-size: 12px;
+  margin-top: 0px;
+
+}
+
+#chart,#polyChart
+{
+  display: block;
+  height: 350px;
+  width: 450px;
+  position: absolute;
+  left: 65%;
+  top: 16%;
+  z-index: 5;
+  box-shadow: 12px 12px 14px black;
+  word-wrap: break-word;
+}
+#polyChart
+{
+  left: 30%;
+}
+#showme
+{
+  display: none;
+  position: absolute;
+  background: white;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  z-index: 6;
+}
