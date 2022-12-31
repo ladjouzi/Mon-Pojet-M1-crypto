@@ -48,11 +48,11 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^3.0.0",
-    "ts-loader": "^3.2.0",
+    "ts-loader": "^9.4.2",
     "tslib": "^1.8.1",
     "tslint": "^5.8.0",
     "typescript": "^2.6.2",
-    "webpack": "^3.10.0"
+    "webpack": "^5.75.0"
   },
   "dependencies": {},
   "typings": "declarations/src/index.d.ts"
