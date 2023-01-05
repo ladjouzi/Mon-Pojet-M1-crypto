@@ -52,7 +52,7 @@
     "tslib": "^1.8.1",
     "tslint": "^5.8.0",
     "typescript": "^2.6.2",
-    "webpack": "^3.10.0"
+    "webpack": "^5.75.0"
   },
   "dependencies": {},
   "typings": "declarations/src/index.d.ts"
